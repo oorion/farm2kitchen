@@ -9,7 +9,7 @@ export default function Home() {
           <h1>Farm to Kitchen</h1>
           <h3>Are you a</h3>
           <span>
-            <Button variant="contained">Farmer</Button>
+            <Button variant="contained" href='what-to-sell'>Farmer</Button>
             <span style={{marginRight: 10, marginLeft: 10, fontSize: 20}}>or</span>
             <Button variant="contained">Customer</Button>
           </span>
