@@ -1,22 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
 import React from 'react';
-import Button from '@mui/material/Button';
-
+import { 
+  Routes, 
+  Route
+} from "react-router-dom";
+import Home from './Home'
+import WhatToSell from './WhatToSell'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Farm to Kitchen</h1>
-        <h3>Are you a</h3>
-        <span>
-          <Button variant="contained">Farmer</Button>
-          <span style={{marginRight: 10, marginLeft: 10, fontSize: 20}}>or</span>
-          <Button variant="contained">Customer</Button>
-        </span>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/what-to-sell" element={<WhatToSell />}></Route>
+        <Route path="*" element={<Home />}></Route>
+      </Routes>
+    </>
   );
 }
 
