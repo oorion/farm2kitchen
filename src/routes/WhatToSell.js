@@ -12,6 +12,8 @@ function WhatToSell(props) {
   const dispatch = useDispatch()
   const add = () => {
     dispatch(addItem({description: description, quantity: quantity}))
+    setDescription('')
+    setQuantity('')
   }
 
 
@@ -32,8 +34,8 @@ function WhatToSell(props) {
         }
         <span>
           <Form inline='true' style={{display: 'flex'}}>
-            <Form.Control type="textarea" placeholder="Description" onChange={event => setDescription(event.target.value)} />
-            <Form.Control type="text" placeholder="Quantity" onChange={event => setQuantity(event.target.value)} />
+            <Form.Control type="textarea" placeholder="Description" value={description} onChange={event => setDescription(event.target.value)} />
+            <Form.Control type="text" placeholder="Quantity" value={quantity} onChange={event => setQuantity(event.target.value)} />
             <Button variant="success" onClick={add}>Add</Button>
           </Form>
         </span>
