@@ -4,8 +4,10 @@ const initialState = {
   items: []
 }
 
+// actions
 export const addItem = createAction('addItem')
 
+// reducer
 export default function appReducer(state = initialState, action) {
   switch (action.type) {
     case 'addItem':
@@ -17,3 +19,6 @@ export default function appReducer(state = initialState, action) {
       return state
   }
 }
+
+// selectors
+export const selectItems = state => state.items
