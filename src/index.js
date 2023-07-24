@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Home from "./routes/Home";
 import WhatToSell from "./routes/WhatToSell";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const router = createBrowserRouter([
   {
