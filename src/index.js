@@ -9,6 +9,13 @@ import {
 import Home from "./routes/Home";
 import WhatToSell from "./routes/WhatToSell";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Provider } from 'react-redux'
+import { configureStore } from '@reduxjs/toolkit'
+import rootReducer from './reducers'
+
+const store = configureStore({
+  reducer: rootReducer
+})
 
 const router = createBrowserRouter([
   {
@@ -23,9 +30,11 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  <Provider store={store}>
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
