@@ -23,26 +23,18 @@ function WhatToSell(props) {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Farm to Kitchen</h1>
+      <div className='App-header'>
+        <div className='company-name'>Farm to Kitchen</div>
+      </div>
+      <header className="App-body">
         <h3>What do you have to sell?</h3>
-        <Container>
-          <Row>
-            <Col xs={12} md={8}>
-              xs=12 md=8tst
-            </Col>
-            <Col xs={6} md={4}>
-              testxs=6 md=4
-            </Col>
-          </Row>
-        </Container>
         <ListGroup>
           {
             props.items.map((item) => {
               return (
                 <ListGroup.Item action>
-                <span style={{width: '90%'}}>{item.description}</span>
-                <span style={{width: '10%'}}>{item.quantity}</span>
+                <span>{item.description}</span>
+                <span>{item.quantity}</span>
                 </ListGroup.Item>
               )
             })
