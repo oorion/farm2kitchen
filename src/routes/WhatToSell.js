@@ -12,12 +12,10 @@ import Col from 'react-bootstrap/Col';
 
 function WhatToSell(props) {
   const [description, setDescription] = useState('')
-  const [quantity, setQuantity] = useState('')
   const dispatch = useDispatch()
   const add = () => {
-    dispatch(addItem({description: description, quantity: quantity}))
+    dispatch(addItem({description: description}))
     setDescription('')
-    setQuantity('')
   }
 
 
@@ -33,8 +31,7 @@ function WhatToSell(props) {
             props.items.map((item) => {
               return (
                 <ListGroup.Item action>
-                <span>{item.description}</span>
-                <span>{item.quantity}</span>
+                  <span>{item.description}</span>
                 </ListGroup.Item>
               )
             })
@@ -43,7 +40,6 @@ function WhatToSell(props) {
         <span>
           <Form inline='true' style={{display: 'flex'}}>
             <Form.Control type="textarea" placeholder="Description" value={description} onChange={event => setDescription(event.target.value)} />
-            <Form.Control type="text" placeholder="Quantity" value={quantity} onChange={event => setQuantity(event.target.value)} />
             <Button variant="success" onClick={add}>Add</Button>
           </Form>
         </span>
