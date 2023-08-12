@@ -8,6 +8,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import MainWrapper from '../components/MainWrapper';
 
 
 function WhatToSell(props) {
@@ -20,31 +21,26 @@ function WhatToSell(props) {
 
 
   return (
-    <div className="App">
-      <div className='App-header'>
-        <div className='company-name'>Farm to Kitchen</div>
-      </div>
-      <header className="App-body">
-        <h3>What do you have to sell?</h3>
-        <ListGroup>
-          {
-            props.items.map((item) => {
-              return (
-                <ListGroup.Item action>
-                  <span>{item.description}</span>
-                </ListGroup.Item>
-              )
-            })
-          }
-        </ListGroup>
-        <span>
-          <Form inline='true' style={{display: 'flex'}}>
-            <Form.Control type="textarea" placeholder="Description" value={description} onChange={event => setDescription(event.target.value)} />
-            <Button variant="success" onClick={add}>Add</Button>
-          </Form>
-        </span>
-      </header>
-    </div>
+    <MainWrapper>
+      <div className='question'>What do you have to sell?</div>
+      <ListGroup>
+        {
+          props.items.map((item) => {
+            return (
+              <ListGroup.Item action>
+                <span>{item.description}</span>
+              </ListGroup.Item>
+            )
+          })
+        }
+      </ListGroup>
+      <span>
+        <Form inline='true' style={{display: 'flex'}}>
+          <Form.Control type="textarea" placeholder="Description" value={description} onChange={event => setDescription(event.target.value)} />
+          <Button variant="success" onClick={add}>Add</Button>
+        </Form>
+      </span>
+    </MainWrapper>
   );
 }
 
