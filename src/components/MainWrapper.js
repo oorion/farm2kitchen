@@ -1,11 +1,13 @@
 import React from 'react';
 import '../routes/App.css';
 import Button from 'react-bootstrap/Button';
+import Logo from'../logo.png';
 
 export default function MainWrapper(props) {
     return (
       <div className="App">
         <div className='App-header'>
+          <img  className='logo' src={Logo}/>
           <div className='company-name'>Farm to Kitchen</div>
         </div>
         <header className="App-body">
