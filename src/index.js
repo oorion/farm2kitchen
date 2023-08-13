@@ -7,7 +7,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Home from "./routes/Home";
-import WhatToSell from "./routes/WhatToSell";
+import Farmers from "./routes/Farmers";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from 'react-redux'
 import { configureStore } from '@reduxjs/toolkit'
@@ -23,8 +23,8 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/what-to-sell",
-    element: <WhatToSell />,
+    path: "/farmers",
+    element: <Farmers />,
   }
 ]);
 

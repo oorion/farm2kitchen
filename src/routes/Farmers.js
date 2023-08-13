@@ -11,7 +11,7 @@ import Col from 'react-bootstrap/Col';
 import MainWrapper from '../components/MainWrapper';
 
 
-function WhatToSell(props) {
+function Farmers(props) {
   const [description, setDescription] = useState('')
   const dispatch = useDispatch()
   const add = () => {
@@ -50,4 +50,4 @@ const mapStateToProps = (state) => {
   }
 }
   
-export default connect(mapStateToProps)(WhatToSell);
+export default connect(mapStateToProps)(Farmers);
