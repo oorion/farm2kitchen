@@ -5,30 +5,42 @@ import Button from 'react-bootstrap/Button'
 import { useDispatch, connect } from 'react-redux'
 import { addItem, selectItems } from '../reducers'
 import ListGroup from 'react-bootstrap/ListGroup';
+import ListGroupItem from 'react-bootstrap/ListGroupItem';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import MainWrapper from '../components/MainWrapper';
 import ProductForm from '../components/ProductForm';
+import Table from 'react-bootstrap/Table';
 
 
 function Farmers(props) {
   return (
     <MainWrapper>
-      <div className='question'>What do you have to sell?</div>
-      <ListGroup>
-        {
-          props.items.map((item) => {
-            return (
-              <ListGroup.Item action>
-                <img className='photo-list' src={item.imageUrl}></img>
-                <div>{item.description}</div>
-              </ListGroup.Item>
-            )
-          })
-        }
-      </ListGroup>
-      <ProductForm />
+      <div className='question'>Products</div>
+        <ProductForm />
+
+        <Table responsive>
+          <thead>
+            <tr>
+              <th>Product</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              props.items.map((item, index) => {
+                return (
+                  <tr>
+                    <td key={index}>
+                      <img className='photo-list' src={item.imageUrl}></img>
+                      <span style={{marginLeft: 10}}>{item.description}</span>
+                    </td>
+                  </tr>
+                )
+              })
+            }
+          </tbody>
+        </Table>
     </MainWrapper>
   );
 }

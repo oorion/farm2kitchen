@@ -13,7 +13,7 @@ export default function ProductForm() {
   }
 
   return (
-    <Form inline='true' style={{display: 'flex'}}>
+    <Form inline='true' style={{display: 'flex', marginBottom: 10}}>
       <Form.Control type="textarea" placeholder="Description" value={description} onChange={event => setDescription(event.target.value)} />
       <PhotoUploader onFileSelect={(image) => {add(window.URL.createObjectURL(image))}}></PhotoUploader>
     </Form>
