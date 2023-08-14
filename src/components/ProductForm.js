@@ -8,7 +8,7 @@ export default function ProductForm() {
   const [description, setDescription] = useState('')
   const dispatch = useDispatch()
   const add = (imageUrl) => {
-    dispatch(addItem({description: description, image: imageUrl}))
+    dispatch(addItem({description: description, imageUrl: imageUrl}))
     setDescription('')
   }
 

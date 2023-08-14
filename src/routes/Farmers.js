@@ -21,7 +21,8 @@ function Farmers(props) {
           props.items.map((item) => {
             return (
               <ListGroup.Item action>
-                <span>{item.description}</span>
+                <img className='photo-list' src={item.imageUrl}></img>
+                <div>{item.description}</div>
               </ListGroup.Item>
             )
           })
