@@ -6,6 +6,7 @@ const initialState = {
 
 // actions
 export const addItem = createAction('addItem')
+export const addUser = createAction('addUser')
 
 // reducer
 export default function appReducer(state = initialState, action) {
@@ -14,6 +15,11 @@ export default function appReducer(state = initialState, action) {
       return {
         ...state,
         items: [...state.items, action.payload]
+      }
+    case 'addUser':
+      return {
+        ...state,
+        user: {credential: action.payload}
       }
     default:
       return state

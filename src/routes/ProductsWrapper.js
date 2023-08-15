@@ -12,22 +12,34 @@ import Col from 'react-bootstrap/Col';
 import MainWrapper from '../components/MainWrapper';
 import ProductForm from '../components/ProductForm';
 import Table from 'react-bootstrap/Table';
-import { GoogleLogin } from '@react-oauth/google';
-import { useNavigate } from "react-router-dom";
-import { addUser } from '../reducers'
 
-
-function Farmers(props) {
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-  const onSuccess = (response) => {
-    dispatch(addUser(response.credential))
-    navigate('/products')
-  }
-
+function ProductsWrapper(props) {
   return (
     <MainWrapper>
-      <GoogleLogin onSuccess={onSuccess} onError={() => {}} />
+      <div className='question'>Products</div>
+        <ProductForm />
+
+        <Table responsive>
+          <thead>
+            <tr>
+              <th>Product</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              props.items.map((item, index) => {
+                return (
+                  <tr>
+                    <td key={index}>
+                      <img className='photo-list' src={item.imageUrl}></img>
+                      <span style={{marginLeft: 10}}>{item.description}</span>
+                    </td>
+                  </tr>
+                )
+              })
+            }
+          </tbody>
+        </Table>
     </MainWrapper>
   );
 }
@@ -38,4 +50,4 @@ const mapStateToProps = (state) => {
   }
 }
   
-export default connect(mapStateToProps)(Farmers);
+export default connect(mapStateToProps)(ProductsWrapper);
