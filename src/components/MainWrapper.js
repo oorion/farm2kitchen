@@ -8,7 +8,7 @@ export default function MainWrapper(props) {
       <div className="App">
         <div className='App-header'>
           <img  className='logo' src={Logo}/>
-          <div className='company-name'>Farm to Kitchen</div>
+          <div className='company-name'>Farm 2 Kitchen</div>
         </div>
         <header className="App-body">
           <div className='pitch-short'>Discover Fresh, Local Produce</div>
