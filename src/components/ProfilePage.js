@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "./ProductsPage.css";
+import "./Products.css";
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import Logo from'../logo.png';
@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import Profile from './Profile'
 import Sidebar from './Sidebar'
 
-export default function ProductsPage() {
+export default function Products() {
   const navigate = useNavigate()
   const handleComplete = () => {
     navigate('/payments')

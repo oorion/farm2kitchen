@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "./ProductsPage.css";
+import "./Products.css";
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import Logo from'../logo.png';
@@ -10,7 +10,7 @@ import Table from 'react-bootstrap/Table';
 import { addItem, selectItems } from '../reducers'
 import Sidebar from './Sidebar'
 
-function ProductsPage(props) {
+function Products(props) {
   const navigate = useNavigate()
   const handleComplete = () => {
     navigate('/profile')
@@ -63,4 +63,4 @@ const mapStateToProps = (state) => {
   }
 }
   
-export default connect(mapStateToProps)(ProductsPage);
+export default connect(mapStateToProps)(Products);

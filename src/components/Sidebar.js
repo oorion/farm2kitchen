@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "./ProductsPage.css";
+import "./Products.css";
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import Logo from'../logo.png';

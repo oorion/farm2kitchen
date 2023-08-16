@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import Home from "./routes/Home";
 import Farmers from "./routes/Farmers";
-import ProductsPage from "./components/ProductsPage";
+import Products from "./components/Products";
 import ProfilePage from "./components/ProfilePage";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from 'react-redux'
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/products",
-    element: <ProductsPage />,
+    element: <Products />,
   },
   {
     path: "/profile",
