@@ -23,14 +23,14 @@ export default function ProductsPage() {
         <div style={{ display: "flex" }}>
           <aside className={"sidebar" + (show ? " hide-sidebar" : "")}>
             <Button variant="light" onClick={toggle}><i class="fa-solid fa-x"></i></Button>
-            <ListGroup defaultActiveKey="#link1">
-              <ListGroup.Item action >
+            <ListGroup defaultActiveKey="profile">
+              <ListGroup.Item action href="products">
                 Products
               </ListGroup.Item>
-              <ListGroup.Item action>
+              <ListGroup.Item action href="profile">
                 Profile
               </ListGroup.Item>
-              <ListGroup.Item action>
+              <ListGroup.Item action href="payments">
                 Payments
               </ListGroup.Item>
             </ListGroup>

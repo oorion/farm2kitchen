@@ -15,7 +15,7 @@ function ProductsPage(props) {
     navigate('/profile')
   }
 
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const toggle = () => {
     setShow(!show);
   };
@@ -24,16 +24,16 @@ function ProductsPage(props) {
     <div style={{ display: "flex" }}>
       <div>
         <div style={{ display: "flex" }}>
-          <aside className={"sidebar" + (show ? " hide-sidebar" : "")}>
+          <aside className={"sidebar" + (show ? "" : " hide-sidebar")}>
             <Button variant="light" onClick={toggle}><i class="fa-solid fa-x"></i></Button>
-            <ListGroup defaultActiveKey="#link1">
-              <ListGroup.Item action >
+            <ListGroup defaultActiveKey="products">
+              <ListGroup.Item action href="products">
                 Products
               </ListGroup.Item>
-              <ListGroup.Item action>
+              <ListGroup.Item action href="profile">
                 Profile
               </ListGroup.Item>
-              <ListGroup.Item action>
+              <ListGroup.Item action href="payments">
                 Payments
               </ListGroup.Item>
             </ListGroup>
@@ -41,10 +41,10 @@ function ProductsPage(props) {
         </div>
       </div>
       <div className="dashboard">
-        {show ? <Button variant="light" onClick={toggle}><i class="fa-solid fa-bars"></i></Button> : ''}
+        {show ? '' : <Button variant="light" onClick={toggle}><i class="fa-solid fa-bars"></i></Button>}
         <img  className='logo' src={Logo}/>
         <span className='company-name'>Farm 2 Kitchen</span>    
-        <div className='question'>Products</div>
+        <div className='question'>{show ? '' : 'Products'}</div>
         <ProductForm />
         <Table responsive>
           <thead>
