@@ -1,7 +1,8 @@
 import { createAction } from '@reduxjs/toolkit'
 
 const initialState = {
-  items: []
+  items: [],
+  user: {},
 }
 
 // actions
@@ -19,7 +20,7 @@ export default function appReducer(state = initialState, action) {
     case 'addUser':
       return {
         ...state,
-        user: {credential: action.payload}
+        user: action.payload
       }
     default:
       return state
@@ -28,3 +29,4 @@ export default function appReducer(state = initialState, action) {
 
 // selectors
 export const selectItems = state => state.items
+export const selectUser = state => state.user
