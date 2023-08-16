@@ -1,40 +1,33 @@
-import React, { useState, useRef } from 'react';
-import Form from 'react-bootstrap/Form'
-import PhotoUploader from './PhotoUploader';
-import { useDispatch, connect } from 'react-redux'
-import { addItem } from '../reducers'
-import { selectUser } from '../reducers'
+import React, { useState } from 'react';
+import "./Products.css";
+import ListGroup from 'react-bootstrap/ListGroup';
+import Button from 'react-bootstrap/Button';
+import Logo from'../logo.png';
+import { useNavigate } from "react-router-dom";
+import ProfileForm from './ProfileForm'
+import Sidebar from './Sidebar'
 
-function Profile(props) {
-  const {user: {given_name, family_name, picture}} = props
+export default function Products() {
+  const navigate = useNavigate()
+  const handleComplete = () => {
+    navigate('/payments')
+  }
 
-  const [streetAddress, setStreetAddress] = useState('')
-  const [city, setCity] = useState('')
-  const [state, setState] = useState('')
-  const [zipCode, setZipCode] = useState('')
-  const [phoneNumber, setPhoneNumber] = useState('')
+  const [show, setShow] = useState(true);
+  const toggle = () => {
+    setShow(!show);
+  };
 
   return (
-    <div>
-      <img src={picture} style={{width: 100, height: 100}}></img>
-      <Form>
-        <Form.Control type="input" placeholder="First Name" value={given_name} onChange={event => {}} />
-        <Form.Control type="input" placeholder="Last Name" value={family_name} onChange={event => {}} />
-        <Form.Control type="input" placeholder="Street Address" value={streetAddress} onChange={event => {setStreetAddress(event.target.value)}} />
-        <Form.Control type="input" placeholder="City" value={city} onChange={event => {setCity(event.target.value)}} />
-        <Form.Control type="input" placeholder="State" value={state} onChange={event => {setState(event.target.value)}} />
-        <Form.Control type="input" placeholder="Zip Code" value={zipCode} onChange={event => {setZipCode(event.target.value)}} />
-        <Form.Control type="input" placeholder="Phone number" value={phoneNumber} onChange={event => {setPhoneNumber(event.target.value)}} />
-      </Form>
+    <div style={{ display: "flex" }}>
+      <Sidebar show={show} toggle={toggle} activeKey='profile'></Sidebar>
+      <div className="dashboard">
+        {show ? '' : <Button variant="light" onClick={toggle}><i class="fa-solid fa-bars"></i></Button>}
+        <img  className='logo' src={Logo}/>
+        <span className='company-name'>Farm 2 Kitchen</span>
+        <ProfileForm></ProfileForm>
+        <Button onClick={handleComplete}>Complete</Button>
+      </div>
     </div>
-  )
-}
-
-const mapStateToProps = (state) => {
-  return {
-    user: selectUser(state)
-  }
-}
-
-
-export default connect(mapStateToProps)(Profile);
+  );
+};

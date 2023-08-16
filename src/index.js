@@ -9,7 +9,8 @@ import {
 import Home from "./routes/Home";
 import Farmers from "./routes/Farmers";
 import Products from "./components/Products";
-import ProfilePage from "./components/ProfilePage";
+import Profile from "./components/Profile";
+import Payments from "./components/Payments";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from 'react-redux'
 import { configureStore } from '@reduxjs/toolkit'
@@ -35,7 +36,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/profile",
-    element: <ProfilePage />,
+    element: <Profile />,
+  },
+  {
+    path: "/payments",
+    element: <Payments />,
   },
 ]);
 
