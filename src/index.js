@@ -8,7 +8,6 @@ import {
 } from "react-router-dom";
 import Home from "./routes/Home";
 import Farmers from "./routes/Farmers";
-import Products from "./routes/Products";
 import ProductsPage from "./components/ProductsPage";
 import ProfilePage from "./components/ProfilePage";
 import 'bootstrap/dist/css/bootstrap.min.css';

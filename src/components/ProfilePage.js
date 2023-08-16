@@ -3,7 +3,6 @@ import "./ProductsPage.css";
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import Logo from'../logo.png';
-import Products from '../routes/Products'
 import { useNavigate } from "react-router-dom";
 import Profile from './Profile'
 
