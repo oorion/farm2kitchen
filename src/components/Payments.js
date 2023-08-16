@@ -1,22 +1,27 @@
-import React, { useState, useRef } from 'react';
-import Form from 'react-bootstrap/Form'
-import PhotoUploader from './PhotoUploader';
-import { useDispatch, connect } from 'react-redux'
-import { addItem } from '../reducers'
-import { selectUser } from '../reducers'
+import React, { useState } from 'react';
+import "./Products.css";
+import ListGroup from 'react-bootstrap/ListGroup';
+import Button from 'react-bootstrap/Button';
+import Logo from'../logo.png';
+import { useNavigate } from "react-router-dom";
+import ProfileForm from './ProfileForm'
+import Sidebar from './Sidebar'
 
-function Payments(props) {
+export default function Payments(props) {
+  const [show, setShow] = useState(true);
+  const toggle = () => {
+    setShow(!show);
+  };
+  
   return (
-    <div>
-      payments
+    <div style={{ display: "flex" }}>
+      <Sidebar show={show} toggle={toggle} activeKey='payments'></Sidebar>
+      <div className="dashboard">
+        {show ? '' : <Button variant="light" onClick={toggle}><i class="fa-solid fa-bars"></i></Button>}
+        <img  className='logo' src={Logo}/>
+        <span className='company-name'>Farm 2 Kitchen</span>
+        <div>payments</div>
+      </div>
     </div>
   )
 }
-
-const mapStateToProps = (state) => {
-  return {
-  }
-}
-
-
-export default connect(mapStateToProps)(Payments);
