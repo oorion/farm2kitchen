@@ -8,6 +8,7 @@ import { useDispatch, connect } from 'react-redux'
 import ProductForm from './ProductForm';
 import Table from 'react-bootstrap/Table';
 import { addItem, selectItems } from '../reducers'
+import Sidebar from './Sidebar'
 
 function ProductsPage(props) {
   const navigate = useNavigate()
@@ -22,24 +23,7 @@ function ProductsPage(props) {
 
   return (
     <div style={{ display: "flex" }}>
-      <div>
-        <div style={{ display: "flex" }}>
-          <aside className={"sidebar" + (show ? "" : " hide-sidebar")}>
-            <Button variant="light" onClick={toggle}><i class="fa-solid fa-x"></i></Button>
-            <ListGroup defaultActiveKey="products">
-              <ListGroup.Item action href="products">
-                Products
-              </ListGroup.Item>
-              <ListGroup.Item action href="profile">
-                Profile
-              </ListGroup.Item>
-              <ListGroup.Item action href="payments">
-                Payments
-              </ListGroup.Item>
-            </ListGroup>
-          </aside>
-        </div>
-      </div>
+      <Sidebar show={show} toggle={toggle} activeKey='products'></Sidebar>
       <div className="dashboard">
         {show ? '' : <Button variant="light" onClick={toggle}><i class="fa-solid fa-bars"></i></Button>}
         <img  className='logo' src={Logo}/>
