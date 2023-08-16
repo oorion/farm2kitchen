@@ -25,6 +25,7 @@ function Farmers(props) {
   const navigate = useNavigate()
   const onSuccess = (response) => {
     dispatch(addUser(jwt_decode(response.credential)))
+    console.log(jwt_decode(response.credential))
     navigate('/products')
   }
 
