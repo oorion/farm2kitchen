@@ -13,34 +13,34 @@ import MainWrapper from '../components/MainWrapper';
 import ProductForm from '../components/ProductForm';
 import Table from 'react-bootstrap/Table';
 
-function ProductsWrapper(props) {
+function Products(props) {
   return (
-    <MainWrapper>
+    <>
       <div className='question'>Products</div>
-        <ProductForm />
+      <ProductForm />
 
-        <Table responsive>
-          <thead>
-            <tr>
-              <th>Product</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              props.items.map((item, index) => {
-                return (
-                  <tr>
-                    <td key={index}>
-                      <img className='photo-list' src={item.imageUrl}></img>
-                      <span style={{marginLeft: 10}}>{item.description}</span>
-                    </td>
-                  </tr>
-                )
-              })
-            }
-          </tbody>
-        </Table>
-    </MainWrapper>
+      <Table responsive>
+        <thead>
+          <tr>
+            <th>Product</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            props.items.map((item, index) => {
+              return (
+                <tr>
+                  <td key={index}>
+                    <img className='photo-list' src={item.imageUrl}></img>
+                    <span style={{marginLeft: 10}}>{item.description}</span>
+                  </td>
+                </tr>
+              )
+            })
+          }
+        </tbody>
+      </Table>
+    </>
   );
 }
 
@@ -50,4 +50,4 @@ const mapStateToProps = (state) => {
   }
 }
   
-export default connect(mapStateToProps)(ProductsWrapper);
+export default connect(mapStateToProps)(Products);

@@ -1,0 +1,17 @@
+.sidebar {
+  width: var(--sidebar);
+  overflow: hidden;
+  border: solid grey;
+  transform: translateX(0);
+  transition: width 1s ease;
+  height: 100vh;
+}
+
+.hide-sidebar {
+  width: 0;
+}
+
+.dashboard {
+  width: calc(100% - var(--sidebar));
+  transition: width 1s ease;
+}
