@@ -6,13 +6,11 @@ import Logo from'../logo.png';
 export default function MainWrapper(props) {
     return (
       <div className="App">
-        <div className='App-header'>
-          <img  className='logo' src={Logo}/>
-          <div className='company-name'>Farm 2 Kitchen</div>
-        </div>
         <header className="App-body">
+          <img  className='logo' src={Logo} style={{width: 200, height: 200}}/>
+          <div className='company-name' style={{marginBottom: 20}}>Farm 2 Kitchen</div>
           <div className='pitch-short'>Discover Fresh, Local Produce</div>
-          <div className='pitch-long'>Support local farmers and enjoy farm-fresh ingredients</div>
+          <div className='pitch-long' style={{marginBottom: 20}}>Support local farmers and enjoy farm-fresh ingredients</div>
           {props.children}
         </header>
       </div>
