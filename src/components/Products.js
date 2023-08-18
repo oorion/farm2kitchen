@@ -33,7 +33,11 @@ function Products(props) {
         <Table responsive>
           <thead>
             <tr>
-              <th>Product</th>
+              <th>Product description</th>
+              <th>Quantity available</th>
+              <th>Unit</th>
+              <th>Price per unit</th>
+              <th>Harvest schedule</th>
             </tr>
           </thead>
           <tbody>
@@ -41,10 +45,14 @@ function Products(props) {
               props.items.map((item, index) => {
                 return (
                   <tr>
-                    <td key={index}>
+                    <td key='description'>
                       <img className='photo-list' src={item.imageUrl}></img>
                       <span style={{marginLeft: 10}}>{item.description}</span>
                     </td>
+                    <td key='quantity'>{item.quantity}</td>
+                    <td key='unit'>{item.unit}</td>
+                    <td key='price'>{item.price}</td>
+                    <td key='schedule'>{item.schedule}</td>
                   </tr>
                 )
               })
