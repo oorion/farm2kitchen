@@ -20,7 +20,7 @@ export default function Payments(props) {
         {show ? '' : <Button variant="light" onClick={toggle}><i class="fa-solid fa-bars"></i></Button>}
         <img  className='logo' src={Logo}/>
         <span className='company-name'>Farm 2 Kitchen</span>
-        <div>payments</div>
+        <div>Payments Placeholder</div>
       </div>
     </div>
   )

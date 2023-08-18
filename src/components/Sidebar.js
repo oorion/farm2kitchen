@@ -15,8 +15,8 @@ export default function Sidebar(props) {
     <div>
       <div style={{ display: "flex" }}>
         <aside className={"sidebar" + (show ? "" : " hide-sidebar")}>
-          <Button variant="light" onClick={toggle}><i class="fa-solid fa-x"></i></Button>
-          <ListGroup defaultActiveKey={activeKey}>
+          <Button variant="light" onClick={toggle} style={{float: 'right'}}><i class="fa-solid fa-x"></i></Button>
+          <ListGroup defaultActiveKey={activeKey} style={{marginTop: 40}}>
             <ListGroup.Item action href="products">
               Products
             </ListGroup.Item>
