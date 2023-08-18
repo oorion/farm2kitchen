@@ -40,15 +40,15 @@ export default function ProductForm() {
         variant='secondary'
         title='Unit'
         style={{marginBottom: 10}}
-        onChange={event => setUnit(event.target.value)}
+        onSelect={val => setUnit(val)}
         value={unit}
       >
-        <Dropdown.Item eventKey="1">Bunch</Dropdown.Item>
-        <Dropdown.Item eventKey="2">Dozen</Dropdown.Item>
-        <Dropdown.Item eventKey="3">Each</Dropdown.Item>
-        <Dropdown.Item eventKey="4">Ounce</Dropdown.Item>
-        <Dropdown.Item eventKey="5">Pint</Dropdown.Item>
-        <Dropdown.Item eventKey="6">Pound</Dropdown.Item>
+        <Dropdown.Item eventKey="Bunch">Bunch</Dropdown.Item>
+        <Dropdown.Item eventKey="Dozen">Dozen</Dropdown.Item>
+        <Dropdown.Item eventKey="Each">Each</Dropdown.Item>
+        <Dropdown.Item eventKey="Ounce">Ounce</Dropdown.Item>
+        <Dropdown.Item eventKey="Pint">Pint</Dropdown.Item>
+        <Dropdown.Item eventKey="Pound">Pound</Dropdown.Item>
       </DropdownButton>
       <Form.Control type="input" placeholder="Price per unit" value={price} onChange={event => setPrice(event.target.value)} style={{width: 150, marginBottom: 10}}/>
       <DropdownButton
@@ -57,12 +57,12 @@ export default function ProductForm() {
         variant='secondary'
         title='Harvest schedule'
         style={{marginBottom: 10}}
-        onChange={event => setSchedule(event.target.value)}
+        onSelect={val => setSchedule(val)}
         value={schedule}
       >
-        <Dropdown.Item eventKey="1">Daily</Dropdown.Item>
-        <Dropdown.Item eventKey="2">Bi-weekly</Dropdown.Item>
-        <Dropdown.Item eventKey="3">Weekly</Dropdown.Item>
+        <Dropdown.Item eventKey="Daily">Daily</Dropdown.Item>
+        <Dropdown.Item eventKey="Bi-weekly">Bi-weekly</Dropdown.Item>
+        <Dropdown.Item eventKey="Weekly">Weekly</Dropdown.Item>
       </DropdownButton>
       <div><Button onClick={add}>Add</Button></div>
     </div>

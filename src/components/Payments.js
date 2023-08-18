@@ -17,7 +17,7 @@ export default function Payments(props) {
     <div style={{ display: "flex" }}>
       <Sidebar show={show} toggle={toggle} activeKey='payments'></Sidebar>
       <div className="dashboard">
-        {show ? '' : <Button variant="light" onClick={toggle}><i class="fa-solid fa-bars"></i></Button>}
+        {!show && <Button variant="light" onClick={toggle}><i class="fa-solid fa-bars"></i></Button>}
         <img  className='logo' src={Logo}/>
         <span className='company-name'>Farm 2 Kitchen</span>
         <div>Payments Placeholder</div>

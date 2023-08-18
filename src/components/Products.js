@@ -25,10 +25,10 @@ function Products(props) {
     <div style={{ display: "flex" }}>
       <Sidebar show={show} toggle={toggle} activeKey='products'></Sidebar>
       <div className="dashboard">
-        {show ? '' : <Button variant="light" onClick={toggle}><i class="fa-solid fa-bars"></i></Button>}
+        {!show && <Button variant="light" onClick={toggle}><i class="fa-solid fa-bars"></i></Button>}
         <img  className='logo' src={Logo}/>
         <span className='company-name'>Farm 2 Kitchen</span>    
-        <div className='question'>{show ? '' : 'Products'}</div>
+        <div className='question'>{!show && 'Products'}</div>
         <ProductForm />
         <Table responsive>
           <thead>
@@ -46,7 +46,7 @@ function Products(props) {
                 return (
                   <tr>
                     <td key='description'>
-                      <img className='photo-list' src={item.imageUrl}></img>
+                      {item.imageUrl && <img className='photo-list' src={item.imageUrl}></img>}
                       <span style={{marginLeft: 10}}>{item.description}</span>
                     </td>
                     <td key='quantity'>{item.quantity}</td>

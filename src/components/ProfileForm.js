@@ -16,7 +16,7 @@ function ProfileForm(props) {
 
   return (
     <div>
-      <img src={picture} style={{width: 100, height: 100}}></img>
+      {picture && <img src={picture} style={{width: 100, height: 100}}></img>}
       <Form>
         <Form.Control type="input" placeholder="First Name" value={given_name} onChange={event => {}} />
         <Form.Control type="input" placeholder="Last Name" value={family_name} onChange={event => {}} />
