@@ -9,6 +9,7 @@ import ProductForm from './ProductForm';
 import Table from 'react-bootstrap/Table';
 import { addItem, selectItems } from '../reducers'
 import Sidebar from './Sidebar'
+import Header from './Header'
 
 function Products(props) {
   const navigate = useNavigate()
@@ -24,10 +25,7 @@ function Products(props) {
   return (
     <div style={{ display: "flex" }}>
       <Sidebar show={show} toggle={toggle} activeKey='products'></Sidebar>
-      <div className="dashboard">
-        {!show && <Button variant="light" onClick={toggle}><i class="fa-solid fa-bars"></i></Button>}
-        <img  className='logo' src={Logo}/>
-        <span className='company-name'>Farm 2 Kitchen</span>    
+      <Header show={show} toggle={toggle}>
         <div className='question'>{!show && 'Products'}</div>
         <ProductForm />
         <Table responsive>
@@ -60,7 +58,7 @@ function Products(props) {
           </tbody>
         </Table>
         <Button onClick={handleComplete}>Complete</Button>
-      </div>
+      </Header>
     </div>
   );
 };

@@ -6,6 +6,7 @@ import Logo from'../logo.png';
 import { useNavigate } from "react-router-dom";
 import ProfileForm from './ProfileForm'
 import Sidebar from './Sidebar'
+import Header from './Header'
 
 export default function Products() {
   const navigate = useNavigate()
@@ -21,13 +22,10 @@ export default function Products() {
   return (
     <div style={{ display: "flex" }}>
       <Sidebar show={show} toggle={toggle} activeKey='profile'></Sidebar>
-      <div className="dashboard">
-        {!show && <Button variant="light" onClick={toggle}><i class="fa-solid fa-bars"></i></Button>}
-        <img  className='logo' src={Logo}/>
-        <span className='company-name'>Farm 2 Kitchen</span>
+      <Header show={show} toggle={toggle}>
         <ProfileForm></ProfileForm>
         <Button onClick={handleComplete}>Complete</Button>
-      </div>
+      </Header>
     </div>
   );
 };
